@@ -16,7 +16,7 @@
 <body>
      
     <div class="text-white py-3" style="background-color: #0A2558;">
-        <h1>&nbsp;&nbsp;Update Stocks</h1>
+        <h1>&nbsp;&nbsp;Delete Stocks</h1>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a href="#" class="navbar-brand">&nbsp;&nbsp;
          
@@ -144,7 +144,7 @@
             </div>
            
                 <div class="d-grid gap-2 col-6 mx-auto">
-                    <button class="btn btn-primary" type="button" style="background-color: #0A2558">Update Stock</button>
+                    <button class="btn btn-primary" type="button" style="background-color: #0A2558">Delete Stock</button>
                     
                   </div>
                

@@ -60,23 +60,23 @@ form{
                 </div>
                 <div class="form-group"> 
                     <label for="">User Name  </label>
-                    <input type="text" name="userName" id="" placeholder = "User Name" class="form-control">
+                    <input type="text" name="userName" id="" placeholder = "User Name" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="">Email Address  </label>
-                    <input type="email" name="email" id="" placeholder = "Email" class="form-control">
+                    <input type="email" name="email" id="" placeholder = "Email" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="">Password</label>
-                    <input type="password" name="password" id="" placeholder = "Password" class="form-control">
+                    <input type="password" name="password" id="txtPassword" placeholder = "Password" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="">Confirm Password</label>
-                    <input type="password" name="cpassword" id="" placeholder = "Password" class="form-control">
+                    <input type="password" name="cpassword" id="txtConfirmPassword" placeholder = "Password" onclick="return Validate()"class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="">Enter the assigning role</label>
-                    <input type="text" name="role" id="" placeholder = "Role of Admin" class="form-control">
+                    <input type="text" name="role" id="" placeholder = "Role of Admin" class="form-control" required>
                 </div>
                 
            <!-- //PHP  -->
@@ -89,12 +89,14 @@ form{
        $userName = $_POST['userName'];
        $password = md5($_POST['password']);
        $cpassword = md5($_POST['cpassword']);
+       $email = $_POST['email'];
+       $role = $_POST['role'];
        
        if($password==$cpassword){ //Password Verification
             if(!empty($userName) && !empty($password) && !is_numeric($userName)){
                 //Save to Database
                 $userId = RandomNum(20);
-                $query = "insert into adminDetails (user_id,username,password) values ('$userId','$userName','$password')";
+                $query = "insert into adminDetails (user_id,username,password,email,role) values ('$userId','$userName','$password','$email','$role')";
 
                 mysqli_query($con,$query);
                 header("Location: index.php");
@@ -106,7 +108,7 @@ form{
 
        }
        else{
-        echo "<h3 class='warning'>Enter Same Password </h3>";
+        echo " <script>alert('Passwords do not match.');</script>";
        }
        
     }
@@ -124,6 +126,17 @@ form{
     </div>
 </div>
 
+<!-- <script type="text/javascript">
+    function Validate() {
+        var password = document.getElementById("txtPassword").value;
+        var confirmPassword = document.getElementById("txtConfirmPassword").value;
+        if (password != confirmPassword) {
+            alert("Passwords do not match.");
+            return false;
+        }
+        return true;
+    }
+</script> -->
     
 </body>
 </html>

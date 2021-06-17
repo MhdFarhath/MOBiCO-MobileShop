@@ -106,7 +106,7 @@ session_start();
       </div>
       <div class="profile-details">
         <img src="images/IMG-20180617-WA0002-02.jpeg">
-        <span class="admin_name">Amas MJA</span>
+        <span class="admin_name"><?php echo $userdata['username']; ?></span>
         <i class='bx bx-chevron-down'></i>
       </div>
     </nav>

@@ -2,21 +2,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <?php include('head.php');?>
-    <link rel="stylesheet" href="css/main.css">
+    <?php //include('head.php');?>
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+
+    <style>
+        .ExitLine{
+            background-color : black;
+        }
+    </style>
 </head>
 <body>
     <!-- Header Section -->
-<?php //include('headerpage.php');?>
-<?php include('navbar.php');?>
+<?php include('../headerpage.php');?>
+<?php //include('navbar.php');?>
     <!-- Body Section   -->
+    <div class="ExitLine">
+        <a href="index.php">
+            <button class="btn btn-light m-2">Exit</button>
+        </a>
+       
+    </div>
     <div class="row ">
-        <div class="col-md-2 bg-secondary   ">
-           <H1>This is my Side Bar Panel</H1> 
-        </div>
         <div class="col-md-10">
             <div class="container">
-                <?php include_once('MobilePhone/mobile.php')?>
+                <?php include_once('mobileUview.php')?>
             </div>
         </div>
         

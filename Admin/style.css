@@ -410,7 +410,7 @@ nav .profile-details i {
     width: 60px;
   }
   .sidebar.active {
-    width: 220px;
+    width: 200px;
   }
   .home-section {
     width: calc(100% - 60px);

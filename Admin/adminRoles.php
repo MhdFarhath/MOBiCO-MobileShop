@@ -1,3 +1,8 @@
+<?php session_start();
+    include("../dbh/config.php");
+    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,69 +53,41 @@
         </nav>  
         </div> <br> 
 
-    <!-- Table Contents -->
+
+
+<!-- Table Contents -->
     <div class="table-responsive">
  <table class="table table-bordered">
 <!-- On rows -->
 <tr>
-<th class="table-primary" >NO</th>
-<th class="table-secondary">Admin ID </th>
-<th class="table-success">Admin Name </th>
-<th class="table-danger">Admin role </th>
-<th class="table-warning">Email Address</th>
-<th class="table-info">Action</th>
+
+<th class="table-dark">Admin ID </th>
+<th class="table-dark">Admin Name </th>
+<th class="table-dark">Admin role </th>
+<th class="table-dark">Email Address</th>
+
 
 </tr>
+<?php  $sql = "SELECT * FROM adminDetails";
+        $res = $con->query($sql);
+        if($res->num_rows > 0){
+            while($row = $res ->fetch_assoc()){
+                echo '<tr>
+                
+                <td class="table-secondary">'.$row['UID'].'</td>
+                <td class="table-success">'.$row['username'].'</td>
+                <td class="table-danger">'.$row['email'].'</td>
+                <td class="table-warning">'.$row['role'].'</td>
+                
+                
+        </tr>';
+        }
+    }
+?>
 <!-- On cells (`td` or `th`) -->
 
-    <tr>
-        <td class="table-primary" >01</td>
-        <td class="table-secondary"></td>
-        <td class="table-success"></td>
-        <td class="table-danger"></td>
-        <td class="table-warning"></td>
-        <td class="table-info">
-            <button type="button" class="btn btn-dark float-right">Remove</button>
-            <button type="button" class="btn btn-danger">Edit</button>
-        </td>
-        
 </tr>
-<tr>
-    <td class="table-primary" >02</td>
-    <td class="table-secondary"></td>
-    <td class="table-success"></td>
-    <td class="table-danger"></td>
-    <td class="table-warning"></td>
-    <td class="table-info">
-        <button type="button" class="btn btn-dark float-right">Remove</button>
-        <button type="button" class="btn btn-danger">Edit</button>
-    </td>
-    
-</tr>
-<tr>
-    <td class="table-primary" >03</td>
-    <td class="table-secondary"></td>
-    <td class="table-success"></td>
-    <td class="table-danger"></td>
-    <td class="table-warning"></td>
-    <td class="table-info">
-        <button type="button" class="btn btn-dark float-right">Remove</button>
-        <button type="button" class="btn btn-danger">Edit</button>
-    </td>
-    
-</tr>
-<tr>
-    <td class="table-primary" >04</td>
-    <td class="table-secondary"></td>
-    <td class="table-success"></td>
-    <td class="table-danger"></td>
-    <td class="table-warning"></td>
-    <td class="table-info">
-        <button type="button" class="btn btn-dark float-right">Remove</button>
-        <button type="button" class="btn btn-danger">Edit</button>
-    </td>
-    
-</tr>
+
 
 </table>
 

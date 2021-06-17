@@ -18,7 +18,7 @@
     <div class="text-white py-3" style="background-color: #0A2558;">
         <h1>&nbsp;&nbsp;Add Stocks</h1>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <a href="../index.php" class="navbar-brand">&nbsp;&nbsp;
+        <a href="#" class="navbar-brand">&nbsp;&nbsp;
          
         </a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#menu">
@@ -27,19 +27,19 @@
         <div class="collapse navbar-collapse" id="menu">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a href="../index.php" class="nav-link" >
+                    <a href="#" class="nav-link" >
                         <i class="fas fa-chart-bar"></i> Dashboard
                     </a>
                 </li>
                 <li class="nav-item">
                     <div class="dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
-                            <i class="fab fa-product-hunt"></i> Stocks
+                            <i class="fas fa-box"></i> Stocks
                         </a>
                         <div class="dropdown-menu">
-                            <a href="addStocks.php" class="dropdown-item"> Add Stocks</a>
-                            <a href="updateStocks.php" class="dropdown-item"> Update Stocks</a>
-                            <a href="deleteStock.php" class="dropdown-item"> Delete Stocks</a>
+                            <a href="#" class="dropdown-item"> Add Stocks</a>
+                            <a href="#" class="dropdown-item"> Update Stocks</a>
+                            <a href="#" class="dropdown-item"> Delete Stocks</a>
                         </div>
                     </div>
                 </li>
@@ -69,7 +69,7 @@
             
             <div class="card-text">
                 <div class="form-group row">
-                    <label for="productName" class="col-sm-2 col-form-label">Stock Name</label>
+                    <label for="productName" class="col-sm-2 col-form-label">Product Name</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="productName">
                     </div>
@@ -77,7 +77,7 @@
             </div>
             <div class="card-text">
                 <div class="form-group row">
-                    <label for="productID" class="col-sm-2 col-form-label">Stock ID</label>
+                    <label for="productID" class="col-sm-2 col-form-label">Product ID</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="productID">
                     </div>
@@ -85,7 +85,7 @@
             </div>
             <div class="card-text">
                 <div class="form-group row">
-                    <label for="manufacturer" class="col-sm-2 col-form-label">Manufacturer</label>
+                    <label for="manufacturer" class="col-sm-2 col-form-label">Supplier</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="manufacturer">
                     </div>
@@ -95,7 +95,15 @@
                 <div class="form-group row">
                     <label for="category" class="col-sm-2 col-form-label">Category</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="category">
+                    <select class="custom-select">
+
+                    <option selected disabled value="">Choose...</option>
+                    <option>Mobile phones</option>
+                    <option>Chargers</option>
+                    <option>Mobile Covers</option>
+                    <option>Tempered Glasses</option>
+                    <option>Handsfree</option>
+            </select>
                     </div>
                 </div>
             </div>
@@ -144,17 +152,7 @@
 
         </form>
     </div>
-    <nav aria-label="Page navigation example">
-        <ul class="pagination justify-content-center">
-        <ul class="pagination">
-     
-          
-          <li class="page-item"><a class="page-link" href="addStocks.html">1</a></li>
-          <li class="page-item"><a class="page-link" href="updateStocks.html">2</a></li>
-          <li class="page-item"><a class="page-link" href="deleteStock.html">3</a></li>
-          <li class="page-item"><a class="page-link" href="updateStocks.html">Next</a></li>
-        </ul>
-      </nav>
+    <n
     
 <!---javaScript cdn----->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
