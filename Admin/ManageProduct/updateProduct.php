@@ -16,7 +16,7 @@
 <body>
    
                
-    <div class="text-white py-3" style="background-color: rgb(101, 196, 196);">
+    <div class="text-white py-3" style="background-color:#0A2558;;">
         <h1>&nbsp;&nbsp;Update Product</h1>
 
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -71,30 +71,71 @@
                     </div>
                 </div>
             </div>
+            
             <div class="card-text">
                 <div class="form-group row">
-                    <label for="productID" class="col-sm-2 col-form-label">Product ID</label>
+                    <label for="manufacturer" class="col-sm-2 col-form-label">Brand Name</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="productID">
+                        <input type="text" class="form-control" id="Brand Name">
                     </div>
                 </div>
             </div>
             <div class="card-text">
-                <div class="form-group row">
-                    <label for="manufacturer" class="col-sm-2 col-form-label">Manufacturer</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="manufacturer">
-                    </div>
-                </div>
-            </div>
-            <div class="card-text">
-                <div class="form-group row">
+                    <div class="form-group row">
                     <label for="category" class="col-sm-2 col-form-label">Category</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="category">
+                    <select class="form-select form-select-lg mb-3 form-control" aria-label=".form-select-lg example">
+                    <option selected>Choose...</option>
+  <option value="1">Mobile phones</option>
+  <option value="2">Chargers</option>
+  <option value="3">Mobile Covers</option>
+  <option value="4">Tempered Glasses</option>
+  <option value="2">Handsfree</option>
+  
+</select>       
+ </div>
+                </div>
+            <div class="card-text">
+                    <div class="form-group row">
+                        <label for="quantity" class="col-sm-2 col-form-label">RAM</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="RAM">
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="card-text">
+                    <div class="form-group row">
+                        <label for="quantity" class="col-sm-2 col-form-label">Storage</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="quantity">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-text">
+                    <div class="form-group row">
+                        <label for="quantity" class="col-sm-2 col-form-label">Camera</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="Camera">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-text">
+                    <div class="form-group row">
+                        <label for="quantity" class="col-sm-2 col-form-label">Display size</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="Display size">
+                        </div>
+                    </div>
+                </div>
+                <div class="card-text">
+                    <div class="form-group row">
+                        <label for="quantity" class="col-sm-2 col-form-label">Battery</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="Battery">
+                        </div>
+                    </div>
+                </div>
+
             <div class="card-text">
                 <div class="form-group row">
                     <label for="price" class="col-sm-2 col-form-label">Price</label>

@@ -17,9 +17,9 @@ $_SESSION['cart']=isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
 <!-- Add font awesome icons -->
 
   <!-- MainSticky-->
-  <div class="row header">
+  <div class="row headerSide">
     <div class="col-md-1">
-        <img src="../images/logo.png" width="100%" alt="MOBiCO" class = " ml-3 ">
+        <img src="images/logo.png" width="100%" alt="MOBiCO" class = " ml-3 ">
     </div> 
     <div class="col-md-11">
         <p>

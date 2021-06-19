@@ -53,7 +53,7 @@
    
      
     <div class="text-white py-3" style="background-color: #0A2558;">
-        <h1>&nbsp;&nbsp;Stocks</h1>
+        <h1>&nbsp;&nbsp;Products</h1>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a href="projectdashboard.html" class="navbar-brand">&nbsp;&nbsp;
          
@@ -70,19 +70,28 @@
                 </li> 
 
                 <li class="nav-item">
-                   <a href="addstocks.php" class="nav-link">
-                    <i class="fas fa-box"></i> Update Stocks
+                   <a href= "addMobile.php" class="nav-link">
+                    <i class="fas fa-box"></i> Add Mobile Products
+                   </a>
+                </li>   
+                <li class="nav-item">
+                   <a href= "addAccessories.php" class="nav-link">
+                    <i class="fas fa-box"></i> Add Accessories
                    </a>
                 </li>   
                     
-                
+                <li class="nav-item">
+                    <a href="updateProduct.php" class="nav-link">
+                    <i class="fas fa-box"></i> Update Products
+                    </a>
+                </li>
 
                 <!-- <li class="nav-item">
-                    <a href="deletestocks.php" class="nav-link">
-                        <i class="fas fa-box"></i> Delete Stocks
+                    <a href="deleteProduct.php" class="nav-link">
+                        <i class="fas fa-box"></i> Delete Products
                     </a>
-                </li> -->
-                
+                </li>
+                 -->
             </ul>
             <ul class="navbar-nav ml-auto">
                 
@@ -99,10 +108,20 @@
      
    <table style="width:100%">
   <tr style="background-color:#0A2558">
-    <th style="color: #ffffff">Product ID.</th>
-    <th style="color: #ffffff">Product Name</th>
-    <th style="color: #ffffff">Stock Quantity</th>
-    <th style="color: #ffffff">Delete Stock</th>
+
+    <th class="table-dark">Product ID</th>
+    <th class="table-dark">Category</th>
+    <th class="table-dark">Brand Name</th>
+    <th class="table-dark">Product Name</th>
+    <th class="table-dark">Price</th>
+    <th class="table-dark">Camera</th>
+    <th class="table-dark">Storage</th> 
+    <th class="table-dark">RAM</th>
+    <th class="table-dark">Battery</th>
+    <th class="table-dark">Display Size</th>
+    <th class="table-dark"> </th>
+    
+   
   </tr>
 
   <?php include("../../dbh/config.php");
@@ -112,26 +131,27 @@
         $res = $con->query($sql);
         if($res->num_rows > 0){
             while($row = $res ->fetch_assoc()){
-                echo '<tr>
-                
-                <td class="table-secondary">'.$row['ID'].'</td>
-                <td class="table-success">'.$row['PNAME'].'</td>
-                <td class="table-danger">'.$row['STOCK'].'</td>
-                
-                <td><a href="deletestocks.php?id='.$row['ID'].'" class="btn btn-sm btn-danger">Delete</a></td>
+                echo '<tr>  
+                <td class="table-danger">'.$row['ID'].'</td>
+                <td class="table-primary">'.$row['CATEGORY'].'</td>
+                <td class="table-secondary">'.$row['BNAME'].'</td>
+                <td class="table-secondary">'.$row['PNAME'].'</td>
+                <td class="table-secondary">Rs. '.$row['PRICE'].'</td>
+                <td class="table-secondary">'.$row['CAMERA'].' MP</td>
+                <td class="table-secondary">'.$row['STORAGE'].' GB</td>
+                <td class="table-secondary">'.$row['RAM'].' GB</td>
+                <td class="table-secondary">'.$row['BATTERY'].'mAh</td>
+                <td class="table-secondary">'.$row['DISPLAY'].' </td>
+              
+                <td><a href="deleteProduct.php?id='.$row['ID'].'" class="btn btn-sm btn-danger">Delete</a></td>
                 
         </tr>';
         }
     }
 ?>
-
- 
 </table>
 
-    <!-- <div class="button">
-            <a href="#">See All</a>
-          </div>
-     -->
+    
     
 <!---javaScript cdn----->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

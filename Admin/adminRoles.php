@@ -78,7 +78,7 @@
                 <td class="table-success">'.$row['username'].'</td>
                 <td class="table-danger">'.$row['email'].'</td>
                 <td class="table-warning">'.$row['role'].'</td>
-                
+                <td><a href="deleteAdmin.php?id='.$row['UID'].' " class="btn btn-sm btn-danger">Delete</a></td>
                 
         </tr>';
         }

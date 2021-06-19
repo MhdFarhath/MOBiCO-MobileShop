@@ -32,21 +32,21 @@ session_start();
         </a>
       </li>
       <li>
-        <a href="manageProduct/addProduct.php">
+        <a href="manageProduct/Product.php">
           <i class='bx bx-box'></i>
           <span class="links_name">Manage Product</span>
         </a>
       </li>
-      <li>
+      <!-- <li>
         <a href="#">
           <i class='bx bx-list-ol'></i>
           <span class="links_name">Show Product Quantity</span>
         </a>
-      </li>
+      </li> -->
       <li>
-        <a href="inventory/addStocks.php">
+        <a href="inventory/stocks.php">
           <i class='bx bxs-box'></i>
-          <span class="links_name">Inventory</span>
+          <span class="links_name">Stock Details</span>
         </a>
       </li>
       <li>
