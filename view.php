@@ -137,7 +137,7 @@ include('dbh/config.php');
             <div class='row'>
                     <div class='col-lg-11 m-3 ml-5'>
                         <h3><strong>Product Description</strong></h3>
-                        <p class='ml-5'>{$row['DESCRIPTION']}</p>
+                        <p class='ml-5'>{$row['PRODESC']}</p>
                     </div>
             </div>
             ";

@@ -13,13 +13,21 @@
 </head>
 <body>
     <!-- Header Section -->
-<?php include('../headerpage.php');?>
+
 <?php //include('navbar.php');?>
     <!-- Body Section   -->
-    <div class="ExitLine">
-        <a href="index.php">
-            <button class="btn btn-light m-2">Exit</button>
-        </a>
+    <div class="ExitLine row">
+       
+            <div class="col-sm-2">
+                <a href="index.php">
+                    <button class="btn btn-light m-2 ml-5">Exit</button>
+                </a>
+            </div>
+            <div class="col-sm-9">
+            <h1 style="color:white" class="">MOBiCO <span style="font-size:20px;">Mobile Accessories</span></h1>
+            </div>
+           
+        
        
     </div>
     <div class="row ">

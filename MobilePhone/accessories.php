@@ -23,7 +23,7 @@
 
 <div class="row">
 <?php 
-        $sql = "SELECT * FROM product";
+        $sql = "SELECT * FROM product WHERE CATEGORY != 'mobile'";
         $res = $con->query($sql);
 
         if($res->num_rows > 0){
