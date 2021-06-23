@@ -59,7 +59,7 @@ session_start();
                     echo "
                     <tr class=''>
                     <td>{$values["pname"]}</td>
-                    <td>USD. {$values['price']}</td>
+                    <td>Rs. {$values['price']}</td>
                     <td>{$values["qty"]}</td>
                     <td>Rs.{$amount}.00</td>
                     <td><a href='viewcart.php?del={$values["pid"]}' class='btn btn-danger btn-sm'>Remove</a></td>

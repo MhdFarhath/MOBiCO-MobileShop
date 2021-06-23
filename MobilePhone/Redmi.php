@@ -19,7 +19,7 @@
         <a href="../index.php" class="btn btn-dark btn-sm float-right m-2 ">
         <i class='bx bx-home' style='color:#ffffff'  ></i> Home Page</a> 
         
-        <a href="ProductCat.php" 
+        <a href="../ProductCat.php" 
             class="btn btn-dark btn-sm m-2 float-right ">
         <i class='bx bx-category bx-xs'></i>  Product Categories </a> 
     </div>

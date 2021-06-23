@@ -193,15 +193,7 @@
 	
 	                }
 
-                
-                    
-
-
-                  
-                    
-                       
-                  
-                    
+                      
                     // header("Location: Product.php");
                     // echo "<script>alert('Success');</script>";
                     die;

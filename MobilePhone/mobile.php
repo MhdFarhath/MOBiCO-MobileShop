@@ -15,7 +15,7 @@
     <!-- <h1 class="font-weight-bold text-dark"> <i class="fab fa-apple m-1 fa-1x"> </i> Apple Phones</h1> <br>     -->
     <div class="row ">
     <?php 
-        $sql = "SELECT * FROM product where BNAME = 'Apple' limit 4";
+        $sql = "SELECT * FROM product where BNAME = 'Apple' && CATEGORY = 'mobile'  limit 4";
         $res = $con->query($sql);
 
         if($res->num_rows > 0){
@@ -34,7 +34,7 @@
     <div class="row">
         
     <?php 
-        $sql = "SELECT * FROM product where BNAME = 'Samsung' LIMIT 4";
+        $sql = "SELECT * FROM product where BNAME = 'Samsung' && CATEGORY = 'mobile' LIMIT 4";
         $res = $con->query($sql);
 
         if($res->num_rows > 0){
@@ -52,7 +52,7 @@
     <!-- <h1 class=""> Mobile Accessories </h1> -->
     <div class="row">
     <?php 
-        $sql = "SELECT * FROM product where BNAME = 'Redmi' LIMIT 4";
+        $sql = "SELECT * FROM product where BNAME = 'Redmi' && CATEGORY = 'mobile' LIMIT 4";
         $res = $con->query($sql);
 
         if($res->num_rows > 0){
@@ -69,7 +69,7 @@
     </div>
     <div class="row">
     <?php 
-        $sql = "SELECT * FROM product where BNAME = 'Huawei' LIMIT 4";
+        $sql = "SELECT * FROM product where BNAME = 'Huawei' && CATEGORY = 'mobile' LIMIT 4";
         $res = $con->query($sql);
 
         if($res->num_rows > 0){
@@ -80,6 +80,26 @@
                 <h6> Rs. '.$row['PRICE'].'</h6>
                 <p><a href="view.php?id='.$row['ID'].'" class="btn btn-dark form-control mb-5" style="background-color:#0A2558;">View Item</a></p> 
                 </div>';
+        }
+    }
+    ?>
+    </div>
+    <br>
+    <label for="Accessories"> <h1>Accessories</h1></label>
+    <div class="row">
+    
+    <?php 
+        $sql = "SELECT * FROM product WHERE CATEGORY != 'mobile' LIMIT 5";
+        $res = $con->query($sql);
+
+        if($res->num_rows > 0){
+            while($row = $res ->fetch_assoc()){
+                echo '<div class="col-md-3 mt-5  text-center">
+                <img src="images/'.$row['PIC'].'" alt="" class="image-responsive " height="55%" width="65%"> <br><br>
+                <p><strong>'.$row['PNAME'].'</strong></p>
+                <h5>USD . '.$row['PRICE'].'</h5>
+                <p><a href="view.php?id='.$row['ID'].'" class="btn btn-dark form-control" style="background-color:#0A2558;">View Item</a></p>
+            </div>';
         }
     }
     ?>

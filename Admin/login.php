@@ -59,7 +59,7 @@ form{
 <div class ="col-md-4 "> </div>
 <!-- //LoginForm -->
 <div class="col-md-4">
-<form action="login.php" method="post" class = "mt-5 login p-4" > <br>
+<form action="login.php" name="myForm" method="post" class = "mt-5 login p-4" onsubmit="return validateForm()" > <br>
     <fieldset>
         <div class="form-group">
             <label for="Heading" class="form-head ">Admin Dashboard</label>
@@ -82,10 +82,10 @@ session_start();
     include("../dbh/function.php");
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
-       $userName = $_POST['userName'];
+       $userName = mysqli_real_escape_string($con,$_POST['userName']);
        $password = md5($_POST['password']);
 
-       $userName = stripslashes($userName);
+       $userName = stripslashes($userName);  
        $password = stripslashes($password);
 
 
@@ -107,7 +107,7 @@ session_start();
                     }
                 }
             }
-            echo '<h5 style="font-size: 15px" class="text-danger text-center">Invalid User Name or Password</h5>';
+            echo '<h5 style="font-size: 15px" class="text-danger text-center">Invalid Password</h5>';
        }
        else{
            echo '<h5 style="font-size: 15px" class="text-danger text-center">Please enter user name and password</h5>';
@@ -122,6 +122,17 @@ session_start();
 </form>
     </div> <!-- Div4Close -->
 </div> <!-- div row close-->
+
+<script>
+function validateForm() {
+  let x = document.forms["myForm"]["userName"].value;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+}
+
+</script>
 
     
 </body>

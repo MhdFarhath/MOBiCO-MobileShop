@@ -19,7 +19,7 @@
     <!-- <h1 class="font-weight-bold text-dark"> <i class="fab fa-apple m-1 fa-1x"> </i> Apple Phones</h1> <br>     -->
     <div class="row ">
     <?php 
-        $sql = "SELECT * FROM product where BNAME = 'Apple' limit 5";
+        $sql = "SELECT * FROM product where BNAME = 'Apple' limit 4";
         $res = $con->query($sql);
 
         if($res->num_rows > 0){

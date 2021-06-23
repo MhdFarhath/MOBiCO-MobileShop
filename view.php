@@ -128,7 +128,7 @@ include('dbh/config.php');
                             <input type='hidden' value='{$row["PNAME"]}' name='pname'>
                             <input type='hidden' value='{$row["PRICE"]}' name='price'>    
                         </li>
-                        <li><span class='text-danger mt-5' id='stock' value='{$row["STOCK"]}'> Available Stock : {$row["STOCK"]}</span> </li>
+                        <li><span class='text-danger mt-5' id='stock' value='{$row["STOCK"]}'> Available : In Stock</span> </li>
                         <li><input type='submit' value='Add to Cart' name='addCart' class='btn btn-primary mt-2'></li>
                     </ul>
                     </form>

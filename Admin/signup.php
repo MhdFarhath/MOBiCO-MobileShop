@@ -72,7 +72,7 @@ form{
                 </div>
                 <div class="form-group">
                     <label for="">Confirm Password</label>
-                    <input type="password" name="cpassword" id="txtConfirmPassword" placeholder = "Password" onclick="return Validate()"class="form-control" required>
+                    <input type="password" name="cpassword" id="txtConfirmPassword" placeholder = "Password" onclick="return Validate()" class="form-control" required>
                 </div>
                 <div class="form-group">
                     <label for="">Enter the assigning role</label>
@@ -86,10 +86,10 @@ form{
     include("../dbh/function.php");
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
-       $userName = $_POST['userName'];
+       $userName =  mysqli_real_escape_string($con,$_POST['userName']);
        $password = md5($_POST['password']);
        $cpassword = md5($_POST['cpassword']);
-       $email = $_POST['email'];
+       $email = mysqli_real_escape_string($con,$_POST['email']);
        $role = $_POST['role'];
        
        if($password==$cpassword){ //Password Verification
@@ -105,10 +105,9 @@ form{
             else{
                 echo "<h3 class='warning'>Please enter valid info<h3>";
                 }
-
        }
        else{
-        echo " <script>alert('Passwords do not match.');</script>";
+        echo "<script>alert('Passwords do not match.');</script>";
        }
        
     }
@@ -116,10 +115,10 @@ form{
 ?>
 
             <div class="form-group">
-                <input type="submit" value="Sign Up" class="btn btn-success btn-sm form-control">
+                <input type="submit" value="Add new admin" class="btn btn-success btn-sm form-control">
             </div>
             <div class="form-group">
-                <a href="login.php" class="btn btn-success btn-sm form-control" > Log In </a>
+                <a href="login.php" class="btn btn-success btn-sm form-control" > Log In Page</a>
             </div>
             </fieldset>
         </form>

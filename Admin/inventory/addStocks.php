@@ -33,16 +33,18 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <div class="dropdown">
-                        <a href="stocks.php" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                <a href="stocks.php" class="nav-link">
                             <i class="fas fa-box"></i> Stocks
                         </a>
+                    <!-- <div class="dropdown">
+                       
                         <div class="dropdown-menu">
+                         <a href="stocks.php" class="dropdown-item">Stocks</a>
                             <a href="addstocks.php" class="dropdown-item"> Add Stocks</a>
-                            <a href="updatestocks.php" class="dropdown-item"> Update Stocks</a>
-                            <a href="deletestocks.php" class="dropdown-item"> Delete Stocks</a>
+                             <a href="updatestocks.php" class="dropdown-item"> Update Stocks</a>
+                            <a href="deletestocks.php" class="dropdown-item"> Delete Stocks</a> 
                         </div>
-                    </div>
+                    </div> -->
                 </li>
                 
             </ul>

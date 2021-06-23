@@ -23,8 +23,8 @@ $_SESSION['cart']=isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
     </div> 
     <div class="col-md-11">
         <p>
-            <h1 class="heading ml-4" style="font-family: 'Limelight', cursive; color:#0A2558;">MOBiCO
-            <span style="font-size : 65%; font-family: 'Limelight', cursive;" class=""> Dealers in Mobile and Accessories
+            <h1 class="heading ml-4" style="font-family: 'Arial Black', cursive; color:#0A2558;">MOBiCO
+            <span style="font-size : 50%; font-family: 'Limelight', cursive;" class=""> Dealers in Mobile and Accessories
             </span>
             </h1> 
             <!-- <hr> -->

@@ -80,11 +80,11 @@
                    </a>
                 </li>   
                     
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="updateProduct.php" class="nav-link">
                     <i class="fas fa-box"></i> Update Products
                     </a>
-                </li>
+                </li> -->
 
                 <!-- <li class="nav-item">
                     <a href="deleteProduct.php" class="nav-link">
@@ -95,11 +95,11 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a href="#" class="nav-link">
                         <i class="fas fa-sign-out-alt"></i> Logout
                     </a>
-                </li>               
+                </li>                -->
             </ul>
         </div>
     </nav>

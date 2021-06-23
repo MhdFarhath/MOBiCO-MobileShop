@@ -33,7 +33,7 @@
         <div class="container clearfix d-flex justify-content-center flex-wrap">
             <ul class="list-group  list-group-horizontal m-2 ">
                 <li class="list-group-item m-1 rounded">
-                    <a href="MobilePhone/ProductCat.php">
+                    <a href="ProductCat.php">
                     <i class='bx bx-category bx-xs'></i>  Product Categories
                     </a>
                 </li>

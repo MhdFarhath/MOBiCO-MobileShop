@@ -15,7 +15,7 @@
     <h1>&nbsp;&nbsp;Samsung Products</h1>
     </div>
     <div class="col-md-6"> <a href="../index.php" class="btn btn-dark btn-sm float-right m-2 "><i class='bx bx-home' style='color:#ffffff'  ></i> Home </a> 
-        <a href="ProductCat.php" class="btn btn-dark btn-sm m-2 float-right  "> <i class='bx bx-category bx-xs'></i> Product Categories</a> 
+        <a href="../ProductCat.php" class="btn btn-dark btn-sm m-2 float-right  "> <i class='bx bx-category bx-xs'></i> Product Categories</a> 
     </div>
 </div>
 <!-- navBar End -->

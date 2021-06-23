@@ -6,12 +6,12 @@ session_start();
     $userdata = checklogin($con);
 ?>
 <!DOCTYPE html>
-<!-- Designined by CodingLab | www.youtube.com/codinglabyt -->
+
 <html lang="en" dir="ltr">
 
 <head>
   <meta charset="UTF-8">
-  <!--<title> Responsiive Admin Dashboard | CodingLab </title>-->
+  <!--<title> Responsiive Admin Dashboard  </title>-->
   <link rel="stylesheet" href="style.css">
   <!-- Boxicons CDN Link -->
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
@@ -50,9 +50,9 @@ session_start();
         </a>
       </li>
       <li>
-        <a href="customerDetails.php">
+        <a href="orderDetails.php">
           <i class='bx bx-user'></i>
-          <span class="links_name">Customer Details</span>
+          <span class="links_name">Order Details</span>
         </a>
       </li>
       <li>
@@ -154,15 +154,15 @@ session_start();
           <div class="title">Monthly Sales Report</div>
           <div class="sales-details">
           </div>
-          <div class="pie-chart">
-            <figcaption>
+          <div class="pie-chart ">
+            <!-- <figcaption >
               Mobile Phones 38%<span style="color:#4e79a7"></span><br>
               Chargers 23%<span style="color:#f28e2c"></span><br>
               Tempered Glasses 16%<span style="color:#e15759"></span><br>
               Phone Covers 10%<span style="color:#76b7b2"></span><br>
               Handsfree 6%<span style="color:#59a14f"></span><br>
               Others 7%<span style="color:#edc949"></span>
-            </figcaption>
+            </figcaption> -->
 
           </div>
           
