@@ -63,8 +63,8 @@
 
 <th class="table-dark">Admin ID </th>
 <th class="table-dark">Admin Name </th>
-<th class="table-dark">Admin role </th>
-<th class="table-dark">Email Address</th>
+<th class="table-dark"> Email Address </th>
+<th class="table-dark">Admin role</th>
 
 
 </tr>
