@@ -1,3 +1,4 @@
+<?php include_once('dbh/config.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +23,7 @@
 </head>
 <body>
    
-<nav class="navbar navbar-expand-sm navbar-dark  border-bottom sticky-top">
+<nav class="navbar navbar-expand-sm navbar-dark  border-bottom sticky-top ">
       
  	           <!-- <div class="LogIcon">
                 <i class="fas fa-mobile-alt m-2 fa-2x"></i>
@@ -31,19 +32,31 @@
                
             <div class="collapse navbar-collapse" id="main_nav">
 	            <ul class="navbar-nav ms-auto ">
-		            <li class="nav-item "><a class="nav-link text-light" href="index.php"> <i class='bx bx-home' style='color:#ffffff'  ></i> Home</a></li>
-		            <li class="nav-item"><a class="nav-link text-light" href="#"><i class='bx bxs-contact'></i> Contact</a></li>
-                <li class="nav-item "><a class="nav-link text-light" href="#"><i class='bx bx-info-circle' ></i> About Us </a></li>
-	           
+		            <li class="nav-item "><a class="nav-link text-light btn btn-danger mr-2" href="index.php"> <i class='bx bx-home' style='color:#ffffff'  ></i> </a></li>	          
+                <li class="nav-item"> 
+                    <a href="viewcart.php" class="nav-link text-light btn btn-warning">
+                    <i class='bx bx-cart' style='color:#ffffff'  >
+                    <?php 
+                    
+                    // count products in cart
+                    $cart_count=count($_SESSION['cart']);
+                    ?>
+                    <span class="badge badge-light badge-pill ml-3 align-middle"> <?php echo $cart_count; ?></span> 
+                    </i>
+                   
+                    
+                    
+                    </a>
+        
+                </li>
               </ul>
             
             </div> 
-
-        
+          
     
     
-    <form class="form-inline my-2 my-lg-0 ">
+    <!-- <form class="form-inline my-2 my-lg-0 ">
       <input class="form-control my-2 mr-sm-2 btn-sm " type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-light my-2 my-sm-0 btn-sm" type="submit">Search</button>
-    </form>
+    </form> -->
 </nav>

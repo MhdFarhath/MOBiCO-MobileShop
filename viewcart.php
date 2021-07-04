@@ -23,7 +23,7 @@ session_start();
         </div>
     </div>
         
-        
+    <a href="index.php" class="btn btn-warning btn-sm mt-3 ml-2 "><i class='bx bx-home' style='color:#ffffff'  ></i> Purchase More Items</a> 
 <!-- navBar End -->
 
     <div class="container">
@@ -66,13 +66,21 @@ session_start();
                     
                     </tr>";
                 }
+                
                 echo "<span class='m-3 text-dark'>Total number items you added : <button class='btn btn-danger btn-sm'>{$qty}</btn></span>";
                 echo "<tr>
                 
                 <td colspan='3'><strong>Grand Total</strong></td>
                 <td>Rs.{$total}.00</td>
 
-                </tr>";
+                </tr>
+                <tr> 
+                <td>
+                 <a href='checkout.php' class='btn btn-dark btn-sm'><i class='bx bx-credit-card-front'> Proceed to Checkout</i>  </a>
+                </td>
+                </tr>
+                ";
+                
             }
             else{
                 echo "<script>alert('Please select a product');</script>";
@@ -80,6 +88,11 @@ session_start();
             }
             ?>
             </table>
+<?php 
+   
+
+?>
+           
         </div>
     </div>
 </body>

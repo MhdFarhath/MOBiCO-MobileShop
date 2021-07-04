@@ -43,11 +43,21 @@ include('dbh/config.php');
             <h1>&nbsp;&nbsp;Product Details</h1>
         </div>        
         <div class="col-md-6 ">
-            <a href="index.php" class="btn btn-dark btn-md m-2 float-right"><i class='bx bx-home' style='color:#ffffff'  ></i> Go Back To Front Page</a> 
-            <a href="viewcart.php" class="btn btn-dark btn-md m-2 float-right"><i class='bx bx-cart' ></i>  Shopping Cart</a> 
+            <a href="index.php" class="btn btn-dark btn-md m-2 float-right"><i class='bx bx-home' style='color:#ffffff'  ></i> </a> 
+            <a href="viewcart.php" class="btn btn-warning btn-md m-2 float-right"><i class='bx bx-cart' style='color:#ffffff'  >
+                    <?php 
+                    
+                    // count products in cart
+                    $cart_count=count($_SESSION['cart']);
+                    ?>
+                    <span class="badge badge-light badge-pill ml-3 align-middle"> <?php echo $cart_count; ?></span> 
+                    </i>
+                    </a>
+                    
         </div>
     </div>
-       
+    
+    <a href="index.php" class="btn btn-warning btn-md mt-5 ml-5"><i class='bx bx-home' style='color:#ffffff'  ></i> Purchase More Items</a> 
         <!-- navBar End -->
 
 
@@ -103,7 +113,7 @@ include('dbh/config.php');
                 $row = $res->fetch_assoc();
                echo "<div class='row d-flex justify-content-center'>
                <div class='col-md-5 mt-1'>
-               <img src='images/{$row['PIC']}' alt='Phone' class='image-responsive' >
+               <img src='images/{$row['PIC']}' alt='Phone' class='image-responsive' width='100%' height='90%' >
                </div>
                <div class='col-md-7 mt-5'>
                <form action='{$_SERVER["REQUEST_URI"]}' method='post'>
@@ -122,7 +132,7 @@ include('dbh/config.php');
                         <li>
                             <div class='quantity'>
                                 <button class='btn minus-btn disabled' type='button'>-</button>
-                                <input type='text' name='qty' id='quantity' value='0'  required>
+                                <input type='text' name='qty' id='quantity' value='1'  required>
                                 <button class='btn plus-btn' type='button'>+</button>
                             </div>
                             <input type='hidden' value='{$row["PNAME"]}' name='pname'>
@@ -135,7 +145,7 @@ include('dbh/config.php');
                </div>
             </div>
             <div class='row'>
-                    <div class='col-lg-11 m-3 ml-5'>
+                    <div class='col-lg-11 ml-5'>
                         <h3><strong>Product Description</strong></h3>
                         <p class='ml-5'>{$row['PRODESC']}</p>
                     </div>
@@ -158,7 +168,7 @@ include('dbh/config.php');
         //Setting Minus Button Disabled
         document.querySelector(".minus-btn").setAttribute("disabled", "disabled");
         // Get the Value
-        var valueCount = 0;
+        var valueCount = 1;
         var stockCount ;
         //Plus btn - increment
         document.querySelector(".plus-btn").addEventListener("click", function () {
@@ -169,7 +179,7 @@ include('dbh/config.php');
                 document.getElementById("quantity").value = valueCount;
                
 
-                if (valueCount > 0) {
+                if (valueCount > 1) {
                document.querySelector(".minus-btn").removeAttribute("disabled");
                document.querySelector(".minus-btn").classList.remove("disabled");
                 }
@@ -184,7 +194,7 @@ include('dbh/config.php');
 
             document.getElementById("quantity").value = valueCount;
 
-            if (valueCount == 0) {
+            if (valueCount == 1) {
                 document.querySelector(".minus-btn").setAttribute("disabled", "disabled");
             }
         })

@@ -11,7 +11,7 @@
     <style>
             a{
                 text-decoration:none !important;
-                color:white !important;
+                color:white ;
             }
             a:hover{
                 color:#dfe0e8 !important;

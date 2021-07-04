@@ -1,5 +1,11 @@
 <?php include('dbh/config.php');
  ?>
+
+<?php session_start()
+?>
+<?php
+$_SESSION['cart']=isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
+?>
  
 <!DOCTYPE html>
 <html>
@@ -24,10 +30,21 @@
     <?php include('headerpage.php');?>
     <?php include('navbar.php');?>
 <!-- Body Section   -->
-    <?php include('sideBar.php');?>
+    <?php //include('sideBar.php');?>
 <!-- //Column One End -->
+<!-- <a href="login.php" class="btn btn-dark btn-sm ml-5">Account</a> -->
 <div class="container clearfix d-flex justify-content-center flex-fill bd-highlight">
-    <?php include('MobilePhone/mobile.php')?>
+    <div class="row">
+            <div class="col-md-2">
+            <?php include('cat.php')?>
+            </div>
+            <div class="col-md-10">
+            <?php include('MobilePhone/mobile.php')?>
+            </div>
+    </div>
+</div>
+<div class="container">
+
 </div>
     
 

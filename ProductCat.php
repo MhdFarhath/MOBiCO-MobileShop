@@ -32,54 +32,38 @@
       <td>Mobile</td>
       <td>All Brands</td>
       <td>All Mobiles</td>
-      <td><a href="MobilePhone/allMob.php" class="btn btn-dark btn-sm">Go To Mobiles<a> </td>
+      <td><a href="MobilePhone/allMob.php" class="btn btn-dark btn-sm">Mobiles<a> </td>
     </tr>
     <tr class="table">
       <th scope="row">2</th>
       <td>Mobile</td>
       <td>Apple</td>
       <td>I Phones</td>
-      <td><a href="MobilePhone/AppleMob.php" class="btn btn-dark btn-sm">Go To Apple Mobiles<a></td>
+      <td><a href="MobilePhone/AppleMob.php" class="btn btn-dark btn-sm">Apple Mobiles<a></td>
     </tr>
     <tr>
       <th scope="row">3</th>
       <td>Mobile</td>
       <td>Samsung</td>
       <td>Galaxy and Other mobiles</td>
-      <td> <a href="MobilePhone/SamsungMob.php" class="btn btn-dark btn-sm">Go To Samsung Mobiles<a></td>
+      <td> <a href="MobilePhone/SamsungMob.php" class="btn btn-dark btn-sm">Samsung Mobiles<a></td>
     </tr>
     <tr class="table">
       <th scope="row">3</th>
       <td>Mobile</td>
       <td> Redmi</td>
       <td> Note and other Redmi</td>
-      <td> <a href="MobilePhone/Redmi.php" class="btn btn-dark btn-sm">Go To Redmi Mobiles<a></td>
+      <td> <a href="MobilePhone/Redmi.php" class="btn btn-dark btn-sm">Redmi Mobiles<a></td>
     </tr>
     <tr class="table">
       <th scope="row">5</th>
       <td>Accessories</td>
       <td> All Brands</td>
       <td> All Accesories</td>
-      <td> <a href="MobilePhone/accessories.php" class="btn btn-dark btn-sm">Go To Accessories<a></td>
+      <td> <a href="MobilePhone/accessories.php" class="btn btn-dark btn-sm">Accessories<a></td>
     </tr>
     
 
 
 
-    <!-- <ul>
-    <li><a href="MobilePhone/allMob.php" class="" style="text-decoration:none; color : black; font-size:20px;">Mobiles</a>
-      <ul>
-        <li><a href="MobilePhone/AppleMob.php" class="" style="text-decoration:none; color : black"> Apple Mobiles</a></li>
-        <li><a href="MobilePhone/SamsungMob.php" class="" style="text-decoration:none; color : black">Samsung Mobiles</a></li>
-        <li><a href="MobilePhone/Redmi.php"  class="" style="text-decoration:none; color : black">Redmi Mobiles</a></li>
-        <li><a href="MobilePhone/Huawei.php"  class="" style="text-decoration:none; color : black">Huawei Mobiles</a></li>
-      </ul>
-    </li>
-    <li><a href="MobilePhone/accessories.php" style="text-decoration:none; color : black; font-size:20px;">
-    Accessories</a>
-          <ul>
-            <li> <a href="MobilePhone/accessories.php"  class="" style="text-decoration:none; color : black">Accessories</a></li>
-          </ul>
-    </li>
-
-    </ul> -->
+   
