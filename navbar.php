@@ -32,9 +32,9 @@
                
             <div class="collapse navbar-collapse" id="main_nav">
 	            <ul class="navbar-nav ms-auto ">
-		            <li class="nav-item "><a class="nav-link text-light btn btn-danger mr-2" href="index.php"> <i class='bx bx-home' style='color:#ffffff'  ></i> </a></li>	          
+		            <li class="nav-item "><a class="nav-link text-light btn btn-danger ml-2" href="index.php"> <i class='bx bx-home' style='color:#ffffff'  ></i> </a></li>	          
                 <li class="nav-item"> 
-                    <a href="viewcart.php" class="nav-link text-light btn btn-warning">
+                    <a href="viewcart.php" class="nav-link text-light btn btn-warning ml-2">
                     <i class='bx bx-cart' style='color:#ffffff'  >
                     <?php 
                     
@@ -49,11 +49,12 @@
                     </a>
         
                 </li>
+                <li class="nav-item "><a class="nav-link text-light btn btn-danger ml-2" href="show-wishlist.php"> <i class="far fa-heart"></i> Wish List </a></li>	
               </ul>
-            
+
             </div> 
           
-    
+            <a class="nav-link text-light btn btn-danger ml-2 float-right" href="myaccount.php"> <i class="far fa-user"></i> My Account </a>
     
     <!-- <form class="form-inline my-2 my-lg-0 ">
       <input class="form-control my-2 mr-sm-2 btn-sm " type="search" placeholder="Search" aria-label="Search">

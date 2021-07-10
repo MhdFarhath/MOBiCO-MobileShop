@@ -14,9 +14,10 @@ include('head.php');
  
  
  
-<div class="container text-white bg-dark">
-    <h2 class='text-center text-white'>My Account</h2>
-
+<div class="container text-white rounded m-5" style="background:#000051;">
+<br>
+    <h2 class='text-center text-white'>View Orders</h2>
+	<span><a href="myaccount.php"><button class="btn btn-warning btn-sm m-2 ">My Account</button></a></span>
     <section id="content">
 		<div class="content-blog content-account">
 			<div class="container">
@@ -29,19 +30,21 @@ include('head.php');
 			<table class="cart-table account-table table table-bordered bg-white text-dark">
 				<thead>
 					<tr>
-						<th>Product</th>
-						<th>Quantity</th>
-						<th>price</th>
-						<th>Total Price</th>
+						<!-- <th></th>
 						<th></th>
+						<th></th>
+						<th></th>
+						<th></th> -->
 					</tr>
 				</thead>
 				<tbody>
 				<?php
 				$c_id = $_SESSION['customerid'];
+				//echo $c_id;
 
  if(isset($_GET['id'])){
      $o_id = $_GET['id'];
+	// echo $o_id;
  }
 
 
@@ -50,7 +53,7 @@ include('head.php');
 
  $row_orders = mysqli_fetch_assoc($result_orders);
   
-				$sql = "SELECT * FROM ordersItems WHERE orderid='$o_id'";
+				$sql = "SELECT * FROM orderItems WHERE orderid='$o_id'";
 				$result = mysqli_query($con, $sql);
 			  
 				if (mysqli_num_rows($result) > 0) {
@@ -58,8 +61,8 @@ include('head.php');
 				 while($row = mysqli_fetch_assoc($result)) {
                   $prodID = $row["productid"] 
  			?>
-					<tr>
-						<td>
+					<!-- <tr>
+						<td> -->
 
                         <?php 
                         
@@ -73,7 +76,7 @@ include('head.php');
                         ?>
 
 
-<a href="single.php?id=<?php echo $prodID ;?>"><?php echo $row_prod['product_name'];?></a>
+<!-- <a href="single.php?id=<?php echo $prodID ;?>"><?php echo $row_prod['product_name'];?></a>
 					 
 						</td>
 						<td>
@@ -86,7 +89,7 @@ include('head.php');
 						<?php echo $row["quantity"] * $row["productprice"] ?>		
 						</td>
 					 
-					</tr>
+					</tr> -->
 				 
 			
 			<?php
@@ -106,22 +109,19 @@ include('head.php');
                 <tfooer>
 					<tr>
 						 
-						<th></th>
-						<th></th>
+						
 						<th>Total Price</th>
-						<th><?php echo  $row_orders['totalprice'] ?></th>
+						<th>Rs. <?php echo  $row_orders['totalprice'] ?>.00</th>
 					</tr>
                     <tr>
 					 
-						<th></th>
-						<th></th>
+						
 						<th>Order Status</th>
 						<th><?php echo  $row_orders['orderstatus'] ?></th>
 					</tr>
                     <tr>
 					 
-						<th></th>
-						<th></th>
+					
 						<th>Date</th> 
 						<th><?php echo date('M j g:i A', strtotime($row_orders["timestamp"]));  ?></th>
 					</tr>
@@ -129,12 +129,12 @@ include('head.php');
 			</table>		
 
 		 
-
+<br>
 			<div class="ma-address">
 						<h3>My Addresses</h3>
 						<p>The following addresses will be used on the checkout page by default.</p>
 
-			<div class="row  bg-white text-dark px-5 py-3">
+			<div class="row   text-white px-5 py-3">
 				<div class="col-md-6">
 								<h4>Billing Address <a href="update_address.php?id=<?php echo $c_id ?>">Edit</a></h4>
                                 <?php  

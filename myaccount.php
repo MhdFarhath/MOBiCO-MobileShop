@@ -2,16 +2,25 @@
 <?php 
 include('dbh/config.php');
  session_start();
+ 
+ if(!isset($_SESSION['customerid'])){
+    
+	header('location:login.php');
+	}
 
 ?>
  
- <a href="index.php"><button class="btn btn-dark btn-sm m-2">Purchase more products</button></a>
  
  
-<div class="container text-white mt-5 " style="background-color: #000051;" >
-    <h2 class='text-center text-white'>My Account</h2>
-
-    <section id="content" >
+ 
+<div class="container text-white m-5 rounded " style="background-color: #000051;" >
+<br>
+<div class="page_header text-center">
+    <h2 class='text-center text-white m-2'>My Account</h2>
+	<span><a href="index.php"><button class="btn btn-warning btn-sm m-2 ">Purchase more products</button></a></span>
+	<span><a href="logout.php"><button class="btn btn-warning btn-sm m-2 ">Signout</button></a></span>
+ </div>   
+	<section id="content" >
 		<div class="content-blog content-account">
 			<div class="container">
 				<div class="row">
@@ -59,7 +68,7 @@ include('dbh/config.php');
 						<?php echo date('M j g:i A', strtotime($row["timestamp"]));  ?>		
 						</td>
 						<td>
-							<a href="view-order.php?id=<?php //echo $row["id"] ?>">View</a> 
+							<a href="view-order.php?id=<?php echo $row["id"] ?>">View</a> 
 							<?php if($row["orderstatus"] != 'Cancelled'){ ?>
 								|  <a href="cancel-order.php?id=<?php echo $row["id"] ?>">cancel</a> 
 							<?php }?>

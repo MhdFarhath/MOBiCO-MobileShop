@@ -203,13 +203,13 @@ if(isset($_SESSION['cart'])){
 
 ?>
 
-    <section id="content">
+    <section id="content" class="  bg-gradient m-2 rounded" style="background:#000051">
 		<div class="content-blog">
-					<div class="page_header text-center bg-dark py-5">
+					<div class="page_header text-center  py-5">
 						<h2>Shop - Checkout</h2>
-						<p>Get the best kit for smooth shave</p>
+						<p>Get the best quality mobile and accessories</p>
 					</div>
-<form method='post' class="bg-dark">
+<form method='post' >
 <?php echo $message ?>
 <div class="container ">
 			<div class="row">

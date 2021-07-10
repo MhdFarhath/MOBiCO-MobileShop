@@ -53,11 +53,13 @@ include('dbh/config.php');
                     <span class="badge badge-light badge-pill ml-3 align-middle"> <?php echo $cart_count; ?></span> 
                     </i>
                     </a>
+            <a class=" text-light btn btn-danger btn-md float-right m-2" href="show-wishlist.php"> <i class='bx bx-heart'></i> Wish List </a>
                     
         </div>
     </div>
     
-    <a href="index.php" class="btn btn-warning btn-md mt-5 ml-5"><i class='bx bx-home' style='color:#ffffff'  ></i> Purchase More Items</a> 
+    <a href="index.php" class="btn btn-warning btn-md mt-5 ml-5"><i class='bx bx-home'   ></i> Purchase More Items</a> 
+    <a href='wishlist.php?id=<?php echo $_GET['id']?>' class='btn btn-warning btn-md mt-5 '><i class='far fa-heart'></i> Add to  WishList</a>
         <!-- navBar End -->
 
 
@@ -140,6 +142,7 @@ include('dbh/config.php');
                         </li>
                         <li><span class='text-danger mt-5' id='stock' value='{$row["STOCK"]}'> Available : In Stock</span> </li>
                         <li><input type='submit' value='Add to Cart' name='addCart' class='btn btn-primary mt-2'></li>
+
                     </ul>
                     </form>
                </div>

@@ -15,7 +15,10 @@ session_start();
   <link rel="stylesheet" href="style.css">
   <!-- Boxicons CDN Link -->
   <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+  <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
 </head>
 
 <body>
@@ -74,13 +77,13 @@ session_start();
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="blog/index.php">
           <i class='bx bxl-blogger'></i>
           <span class="links_name">Manage Blogs</span>
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="salesRep.php">
           <i class='bx bxs-report'></i>
           <span class="links_name">Sales Report</span>
         </a>
@@ -116,7 +119,21 @@ session_start();
         <div class="box">
           <div class="right-side">
             <div class="box-topic">Total Customers</div>
-            <div class="number">1,250</div>
+            <div class="number"><?php
+              $sql = "SELECT id FROM customer";
+              $res = mysqli_query($con, $sql);
+              if ($res)
+              {
+                  // it return number of rows in the table.
+                  $row = mysqli_num_rows($res);
+                    
+                     if ($row)
+                        {
+                        // printf("Number of row in the table : " . $row);
+                          echo $row;
+                        }
+              }
+            ?></div>
 
           </div>
           <i class='bx bx-street-view cart two'></i>
@@ -133,7 +150,24 @@ session_start();
         <div class="box">
           <div class="right-side">
             <div class="box-topic">Total Orders</div>
-            <div class="number">9,852</div>
+            <div class="number">
+            <?php
+              $sql = "SELECT id FROM orders";
+              $res = mysqli_query($con, $sql);
+              if ($res)
+              {
+                  // it return number of rows in the table.
+                  $row = mysqli_num_rows($res);
+                    
+                     if ($row)
+                        {
+                        // printf("" . $row);
+                          echo $row;
+                        }
+              }
+            ?>
+            
+            </div>
 
           </div>
 
@@ -142,7 +176,22 @@ session_start();
         <div class="box">
           <div class="right-side">
             <div class="box-topic">Total Sales</div>
-            <div class="number">Rs.123,500</div>
+            <div class="number" style="font-size:17px;"><?php
+              $sql = "SELECT sum(totalprice) as ttp FROM orders";
+              $res = mysqli_query($con, $sql);
+             
+              if ($res)
+              {
+                  // it return number of rows in the table.
+                  $row = mysqli_fetch_assoc($res);
+                    
+                     if ($row)
+                        {
+                        // printf("" . $row);
+                          echo "Rs. " . $row['ttp'];
+                        }
+              }
+            ?></div>
 
           </div>
           <i class='bx bxs-cart-download cart four'></i>
@@ -154,8 +203,8 @@ session_start();
           <div class="title">Monthly Sales Report</div>
           <div class="sales-details">
           </div>
-          <div class="pie-chart ">
-            <!-- <figcaption >
+          <!-- <div class="pie-chart ">
+            <figcaption >
               Mobile Phones 38%<span style="color:#4e79a7"></span><br>
               Chargers 23%<span style="color:#f28e2c"></span><br>
               Tempered Glasses 16%<span style="color:#e15759"></span><br>
@@ -163,9 +212,8 @@ session_start();
               Handsfree 6%<span style="color:#59a14f"></span><br>
               Others 7%<span style="color:#edc949"></span>
             </figcaption> -->
-
-          </div>
-          
+            <?php include('date.php'); ?>
+          <!-- </div> -->
         </div>
         <div class="top-sales box">
           <div class="title">Trending Products</div>
@@ -241,7 +289,7 @@ session_start();
       } else
         sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
     }
-  </script>
+  
 
 </body>
 

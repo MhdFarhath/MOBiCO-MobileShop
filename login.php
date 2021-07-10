@@ -1,12 +1,14 @@
 <?php include_once('head.php'); ?>
 
  
-<div class="container text-white mt-5" style="background-color: #000051;">
+<div class="container text-white mt-5 rounded" style="background-color: #000051;">
     <div class="row">
       <div class="col-md-12 my-5">
         <div class="page_header text-center">
             <h2>Shop - Account</h2>
-           
+            <span><a href="index.php" class="btn btn-md btn-warning m-2">Return Home</a>
+                   
+            </span>
         </div>
       </div>
 
@@ -35,7 +37,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label>Username or E-mail Address</label>
+                            <label>E-mail Address</label>
                             <input type="text" value="" class="form-control" name='email'>
                         </div>
                     </div>
@@ -113,8 +115,11 @@
                     </div>
                 </div>
             </form>
+          
         </div>
+        
     </div>
+   
 </div>
 
 
@@ -123,11 +128,11 @@
     </div>
 
    
-
-   
+    
 </div>
 
 
+   
 
 
 

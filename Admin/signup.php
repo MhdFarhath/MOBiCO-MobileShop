@@ -74,10 +74,15 @@ form{
                     <label for="">Confirm Password</label>
                     <input type="password" name="cpassword" id="txtConfirmPassword" placeholder = "Password" onclick="return Validate()" class="form-control" required>
                 </div>
-                <div class="form-group">
-                    <label for="">Enter the assigning role</label>
-                    <input type="text" name="role" id="" placeholder = "Role of Admin" class="form-control" required>
-                </div>
+                <select name="role" class="form-select form-select-lg mb-3 form-control"  aria-label=".form-select-lg example" required>
+                        <option selected>Choose...</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Editor">Editor</option>
+                        <option value="Marketing Analysist">Marketing Analysist</option>
+                        <option value="Manager">Manager</option>
+                        
+  
+                    </select>     
                 
            <!-- //PHP  -->
         
@@ -99,7 +104,7 @@ form{
                 $query = "insert into adminDetails (user_id,username,password,email,role) values ('$userId','$userName','$password','$email','$role')";
 
                 mysqli_query($con,$query);
-                header("Location: index.php");
+                header("Location: adminRoles.php");
                 die;
             }
             else{

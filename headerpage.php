@@ -1,4 +1,5 @@
-<!-- <?php session_start()
+<!-- <?php session_start();
+
 ?>
 <?php
 $_SESSION['cart']=isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
@@ -18,15 +19,15 @@ $_SESSION['cart']=isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
 
   <!-- MainSticky-->
   <div class="row headerSide">
-    <!-- <div class="col-md-1">
-        <img src="images/logo.png" width="100%" alt="MOBiCO" class = " ml-3 ">
-    </div>  -->
-    <div class="col-md-10">
+    <div class="col-md-1">
+        <img src="images/logo.png" width="100%" alt="MOBiCO" class = " ml-3 mt-4 ">
+    </div> 
+    <div class="col-md-9">
         <p>
-            <h1 class="heading ml-4" style="font-size: 400%; font-family: 'Arial Black', cursive; color:#0A2558;">MOBiCO
+            <h1 class="heading ml-4" style="font-size: 400%; font-family: 'Arial Black', cursive; color:#0A2558;">MOBiCO SHOPPING
 
             </h1> 
-            <span style="font-size : 120%; font-family: 'Roboto';" class="ml-5"> Trending Top Dealers in Mobile and Accessories
+            <span style="font-size : 120%; font-family: 'Roboto';" class="ml-4"> Trending Dealers in Mobile and Mobile Accessories
             
             </span>
             <!-- <hr> -->
@@ -35,8 +36,8 @@ $_SESSION['cart']=isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
     <div class="col-md-2">
       
     <!-- <a href="myaccount.php" class="btn btn-dark btn-sm m-2" style="background-color:#000051; color:white; width: 100%;"> <i class='bx bxs-user-rectangle bx-sm'> </i>Account</a> -->
-    <a href="login.php" class="btn btn-primary btn-sm m-2 " style="background-color:#000051; width: 100%; " > Log in</a>
-    <a href="logout.php" class="btn btn-primary btn-sm m-2" style="background-color:#000051; width: 100%; " > Log Out</a>
+    <!-- <a href="login.php" class="btn btn-primary btn-sm m-2 " style="background-color:#000051; width: 100%; " > Log in</a>
+    <a href="logout.php" class="btn btn-primary btn-sm m-2" style="background-color:#000051; width: 100%; " > Log Out</a> -->
   </div>
   </div>
 

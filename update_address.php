@@ -106,7 +106,7 @@ if(isset($_SESSION['cart'])){
 		<div class="content-blog">
 					<div class="page_header text-center  py-5">
 						<h2>Update Address</h2>
-						 
+						<span><a href="myaccount.php"><button class="btn btn-warning btn-sm m-2">My Account</button></a></span>
 					</div>
 <form method='post'>
 <?php echo $message ?>
@@ -114,7 +114,9 @@ if(isset($_SESSION['cart'])){
 			<div class="row">
 				<div class="offset-md-2 col-md-8">
 					<div class="billing-details">
+					
 						<h3 class="uppercase">Billing Details</h3>
+						
 						<div class="space30"></div>
 					 
 						

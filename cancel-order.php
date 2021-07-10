@@ -67,7 +67,7 @@ $row = mysqli_fetch_assoc($result);
  
  
 
-<div class="container text-white bg-dark m-2">
+<div class="container text-white rounded m-5" style="background:#000051">
 
 <?php
 // echo "<pre>";
@@ -96,6 +96,7 @@ if(isset($_SESSION['cart'])){
 		<div class="content-blog">
 					<div class="page_header text-center  py-5">
 						<h2>Cancel Order</h2>
+						<span><a href="myaccount.php"><button class="btn btn-warning btn-sm m-2 ">My Account</button></a></span>
 						 
 					</div>
 <form method='post'>
@@ -128,7 +129,7 @@ if(isset($_SESSION['cart'])){
 
  $row_orders = mysqli_fetch_assoc($result_orders);
   
-				$sql = "SELECT * FROM ordersItems WHERE orderid='$o_id'";
+				$sql = "SELECT * FROM orderItems WHERE orderid='$o_id'";
 				$result = mysqli_query($con, $sql);
 			  
 				if (mysqli_num_rows($result) > 0) {
@@ -183,22 +184,18 @@ if(isset($_SESSION['cart'])){
                 <tfooer> -->
 					<tr>
 						 
-						<th></th>
-						<th></th>
+						
 						<th>Total Price</th>
 						<th><?php echo  $row_orders['totalprice'] ?></th>
 					</tr>
                     <tr>
 					 
-						<th></th>
-						<th></th>
+						
 						<th>Order Status</th>
 						<th><?php echo  $row_orders['orderstatus'] ?></th>
 					</tr>
                     <tr>
 					 
-						<th></th>
-						<th></th>
 						<th>Date</th>
 						<th><?php echo  $row_orders['timestamp'] ?></th>
 					</tr>

@@ -67,68 +67,39 @@
     <table class="table table-bordered mt-5">
 <!-- On rows -->
 <tr>
-<th class="table-dark">NO</th>
+<th class="table-dark">Order ID</th>
 <th class="table-dark">User ID </th>
-<th class="table-dark">User Name </th>
-<th class="table-dark">Product Name</th>
-<th class="table-dark">Contact number</th>
-<th class="table-dark">Qty</th>
-<th class="table-dark"></th>
+<th class="table-dark">Total Price</th>
+<th class="table-dark">Time</th>
+<th class="table-dark">Order Status</th>
+<th class="table-dark">Payment Method</th>
+
 
 
 </tr>
 <!-- On cells (`td` or `th`) -->
 
-    <tr>
-        <td class="table-secondary">01</td>
-        <td class="table-secondary">0125 </td>
-        <td class="table-secondary">Afraj </td>
-        <td class="table-secondary">Iphone 7+</td>
-        <td class="table-secondary">07686569</td>
-        <td class="table-secondary">11</td>
-        <td class="table-secondary">
-            <button type="button" class="btn btn-danger float-right">Remove</button>
-            
-        </td>
+   
+<?php include("../dbh/config.php");
+      include("../dbh/function.php");
+  
+  $sql = "SELECT * FROM orders";
+        $res = $con->query($sql);
+        if($res->num_rows > 0){
+            while($row = $res ->fetch_assoc()){
+                echo '<tr>  
+                <td class="table-danger">'.$row['id'].'</td>
+                <td class="table-primary">'.$row['userid'].'</td>
+                <td class="table-secondary">Rs. '.$row['totalprice'].'/-</td>
+                <td class="table-secondary">'.$row['timestamp'].'</td>
+                <td class="table-secondary"> '.$row['orderstatus'].'</td>
+                <td class="table-secondary">'.$row['paymentmode'].'</td>
         
-</tr>
-<tr>
-    <td class="table-secondary">02</td>
-    <td class="table-secondary">0126 </td>
-    <td class="table-secondary">Farhath </td>
-    <td class="table-secondary">POCO M3 </td>
-    <td class="table-secondary">0778255</td>
-    <td class="table-secondary">12</td>
-    <td class="table-secondary">
-        <button type="button" class="btn btn-danger float-right">Remove</button>
-    
-    </td>
-    
-</tr>
-<tr>
-    <td class="table-secondary">03</td>
-    <td class="table-secondary">0127 </td>
-    <td class="table-secondary">Amas</td>
-    <td class="table-secondary">Note 10 </td>
-    <td class="table-secondary">0759382</td>
-    <td class="table-secondary">12</td>
-    <td class="table-secondary">
-        <button type="button" class="btn btn-danger float-right">Remove</button>
-     
-    </td>
-    
-</tr>
-<tr>
-    <td class="table-secondary">04</td>
-    <td class="table-secondary">0128 </td>
-    <td class="table-secondary">Nawrin </td>
-    <td class="table-secondary">Note 10</td>
-    <td class="table-secondary">0716570</td>
-    <td class="table-secondary">10</td>
-    <td class="table-secondary">
-        <button type="button" class="btn btn-danger float-right">Remove</button>
-    
-    </td>
+                
+        </tr>';
+        }
+    }
+?>
     
     
 </tr>
