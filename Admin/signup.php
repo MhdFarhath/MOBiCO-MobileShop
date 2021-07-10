@@ -75,7 +75,7 @@ form{
                     <input type="password" name="cpassword" id="txtConfirmPassword" placeholder = "Password" onclick="return Validate()" class="form-control" required>
                 </div>
                 <select name="role" class="form-select form-select-lg mb-3 form-control"  aria-label=".form-select-lg example" required>
-                        <option selected>Choose...</option>
+                        <option selected>Choose Admin Roles...</option>
                         <option value="Admin">Admin</option>
                         <option value="Editor">Editor</option>
                         <option value="Marketing Analysist">Marketing Analysist</option>

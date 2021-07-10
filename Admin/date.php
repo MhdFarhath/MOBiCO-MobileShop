@@ -62,7 +62,7 @@ include_once('../dbh/config.php');
      },
      data: [{
          type: "bar",
-         yValueFormatString: "$#,##0K",
+         yValueFormatString: "#,##0",
          indexLabel: "{y}",
          indexLabelPlacement: "inside",
          indexLabelFontWeight: "bolder",

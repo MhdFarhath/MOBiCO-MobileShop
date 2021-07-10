@@ -329,6 +329,9 @@ if(isset($_SESSION['cart'])){
 							<input name="payment" value='Paypal'  id="radio3" class="mr-2 css-checkbox" type="radio"><span>Paypal</span>
 							<div class="space20"></div>
 							<p>Pay via PayPal; you can pay with your credit card if you don't have a PayPal account</p>
+							<div id="paypal-payment-button">
+
+                        	</div>
 						</div>
 				
                 </div>
@@ -354,7 +357,8 @@ if(isset($_SESSION['cart'])){
 
 </form>
 
-
+<script src="https://www.paypal.com/sdk/js?client-id=AYwCCBAb5E4kvJz3VLr9fvDTPreg4wYluHIMrJNNIgGqhSHP3d7v41c26RtoEKdyIL94bihPlnVIYazw&disable-funding=credit,card"></script>
+    <script src="index.js"></script>
 
 
 

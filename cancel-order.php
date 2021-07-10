@@ -225,7 +225,7 @@ if(isset($_SESSION['cart'])){
         <div class="row">
             <div class="col-md-12 text-center">
                 <input type="hidden" name='orderid' value='<?php echo $_GET['id'] ?>'>
-                <input type='submit' name='submit' value='Cancel Order' class="btn">
+                <input type='submit' name='submit' value='Cancel Order' class="btn btn-light m-2">
             </div>
         </div>
 		

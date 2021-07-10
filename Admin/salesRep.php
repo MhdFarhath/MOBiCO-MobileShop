@@ -23,7 +23,8 @@
  <?php include('../dbh/config.php');
               $sql = "SELECT SUM(totalprice) as ttp FROM orders where MONTH(timestamp)= MONTH(NOW())";
               $res = mysqli_query($con, $sql);
-             
+              $time = date('d-m-Y', time());
+              $Curmonth =  date('F');
               if ($res)
               {
                   // it return number of rows in the table.
@@ -31,8 +32,10 @@
                     
                      if ($row)
                         {
+                            echo "<span style='text-decoration:underline; font-size:50px; margin-left:50;'>  Monthly Report of {$Curmonth}</span>";
+                            echo "<span style='text-decoration:underline; font-size:20px; margin-left:450px;'>Today  : {$time}</span>";
                         // printf("" . $row);
-                          echo "Total amount of sales for this month : Rs. " . $row['ttp'];
+                          echo "<h4 style='margin-left:100px;'>Total amount of sales for this month : Rs. {$row['ttp']} </h4>" ;
                         }
                       
               }
@@ -50,7 +53,7 @@
                  if ($rowcount)
                     {
                     // printf("" . $row);
-                      echo "\n Number of Orders added this month : ".$rowcount;
+                      echo "<h6 style='margin-left:100px;'> Number of Orders added this month : {$rowcount} Orders</h6>";
                     }
                   }      
                     
@@ -69,7 +72,9 @@
                  if ($rowcount)
                     {
                     // printf("" . $row);
-                      echo "\n \nNumber of customers ordered products in this month : ".$rowcount;
+                      echo "<h6 style='margin-left:100px;'>Number of customers ordered products in this month : {$rowcount} Customers </h6>";
+                      echo "<hr>";
+                      echo "<hr>";
                     }
                   }      
                     
@@ -141,7 +146,7 @@ include_once('../dbh/config.php');
      },
      data: [{
          type: "bar",
-         yValueFormatString: "$#,##0K",
+         yValueFormatString: "#,##0.00",
          indexLabel: "{y}",
          indexLabelPlacement: "inside",
          indexLabelFontWeight: "bolder",

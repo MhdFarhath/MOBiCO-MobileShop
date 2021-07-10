@@ -104,8 +104,8 @@ session_start();
         <span class="dashboard">Dashboard</span>
       </div>
       <div class="search-box">
-        <input type="text" placeholder="Search...">
-        <i class='bx bx-search'></i>
+        <!-- <input type="text" placeholder="Search...">
+        <i class='bx bx-search'></i> -->
       </div>
       <div class="profile-details">
         <img src="images/IMG-20180617-WA0002-02.jpeg">
@@ -141,7 +141,21 @@ session_start();
         <div class="box">
           <div class="right-side">
             <div class="box-topic">Total Blogs</div>
-            <div class="number">10</div>
+            <div class="number"> <?php
+              $sql = "SELECT id FROM data";
+              $res = mysqli_query($con, $sql);
+              if ($res)
+              {
+                  // it return number of rows in the table.
+                  $row = mysqli_num_rows($res);
+                    
+                     if ($row)
+                        {
+                        // printf("" . $row);
+                          echo $row;
+                        }
+              }
+            ?></div>
 
           </div>
           <i class='bx bxl-blogger cart three'></i>
@@ -203,76 +217,26 @@ session_start();
           <div class="title">Monthly Sales Report</div>
           <div class="sales-details">
           </div>
-          <!-- <div class="pie-chart ">
-            <figcaption >
-              Mobile Phones 38%<span style="color:#4e79a7"></span><br>
-              Chargers 23%<span style="color:#f28e2c"></span><br>
-              Tempered Glasses 16%<span style="color:#e15759"></span><br>
-              Phone Covers 10%<span style="color:#76b7b2"></span><br>
-              Handsfree 6%<span style="color:#59a14f"></span><br>
-              Others 7%<span style="color:#edc949"></span>
-            </figcaption> -->
+          <!-- Sales Report Bar Chart -->
             <?php include('date.php'); ?>
-          <!-- </div> -->
         </div>
         <div class="top-sales box">
           <div class="title">Trending Products</div>
           <ul class="top-sales-details">
-            <li>
-              <a href="#">
-                <img src="images/APL_AP-12-PROMAX-256-GREY-01.jpg">
-                <span class="product">Apple iPhone 12 Pro Max</span>
-              </a>
-              <span class="price">Rs.320,400</span>
-            </li>
-            <li>
-              <a href="#">
-                <img src="images/ImgW.jpg">
-                <span class="product">Redmi Note 10 </span>
-              </a>
-              <span class="price">Rs.44,000</span>
-            </li>
-            <li>
-              <a href="#">
-                <img src="images/oneplus 9pro.jpg">
-                <span class="product">OnePlus 9 Pro</span>
-              </a>
-              <span class="price">Rs.175,800</span>
-            </li>
-            <li>
-              <a href="#">
-                <img src="images/xiaomi-mi-11-ultra-5g-white-1.jpg">
-                <span class="product">Xiaomi Mi 11 Ultra</span>
-              </a>
-              <span class="price">Rs.167,900</span>
-            </li>
-            <li>
-              <a href="#">
-                <img src="images/more-pixel-5-press-renders.jpg">
-                <span class="product">Google Pixel 5</span>
-              </a>
-              <span class="price">Rs.132,000</span>
-            </li>
-            <li>
-              <a href="#">
-                <img src="images/1611832903_1613579.jpg">
-                <span class="product">Sony Xperia Pro</span>
-              </a>
-              <span class="price">Rs.51,500</span>
-            <li>
-              <a href="#">
-                <img src="images/poco-m3-srilanka.jpg">
-                <span class="product">Xiaomi POCO M3</span>
-              </a>
-              <span class="price">Rs.31,000</span>
-            </li>
-            <li>
-              <a href="#">
-                <img src="images/Samsung-Galaxy-A22-5G-renders-1.jpg">
-                <span class="product">Samsung Galaxy A22 5G</span>
-              </a>
-              <span class="price">Rs.41,400</span>
-            </li>
+          <?php include('../dbh/config.php');
+            $sql = "SELECT * FROM product  ORDER BY RAND() limit 10 ";
+            $res = $con->query($sql);
+
+            if($res->num_rows > 0){
+              while($row = $res ->fetch_assoc()){
+                echo '<li>
+                        <img src="../images/'.$row['PIC'].'" alt="" class="image-responsive " width="10%" height="10%">     
+                        <span class="product">'.$row['PNAME'].'</span>
+                        <span class="price">Rs. '.$row['PRICE'].'.00</span>
+                      </li>';
+              }
+            }
+          ?>
           </ul>
         </div>
       </div>
