@@ -74,8 +74,8 @@
 
         if($res->num_rows > 0){
             while($row = $res ->fetch_assoc()){
-                echo '<div class="col-md-3 text-center">
-                <img src="images/'.$row['PIC'].'" alt="" class="image-responsive" height="70%" width="110%"> <br><br>
+                echo '<div class="col-md-3 mt-4 text-center">
+                <img src="images/'.$row['PIC'].'" alt="" class="image-responsive" height="70%" width="110%" > <br><br>
                 <p><strong>'.$row['PNAME'].'</strong></p>
                 <h6> Rs. '.$row['PRICE'].'</h6>
                 <p><a href="view.php?id='.$row['ID'].'" class="btn btn-dark form-control mb-5" style="background-color:#0A2558;">View Item</a></p> 
@@ -89,13 +89,13 @@
     <div class="row">
     
     <?php 
-        $sql = "SELECT * FROM product WHERE CATEGORY != 'mobile' LIMIT 5";
+        $sql = "SELECT * FROM product WHERE CATEGORY != 'mobile' LIMIT 8";
         $res = $con->query($sql);
 
         if($res->num_rows > 0){
             while($row = $res ->fetch_assoc()){
                 echo '<div class="col-md-3 mt-5  text-center">
-                <img src="images/'.$row['PIC'].'" alt="" class="image-responsive " height="55%" width="65%"> <br><br>
+                <img src="images/'.$row['PIC'].'" alt="" class="image-responsive " height="55%" width="65%" > <br><br>
                 <p><strong>'.$row['PNAME'].'</strong></p>
                 <h5>Rs . '.$row['PRICE'].'</h5>
                 <p><a href="view.php?id='.$row['ID'].'" class="btn btn-dark form-control" style="background-color:#0A2558;">View Item</a></p>

@@ -302,7 +302,7 @@ if(isset($_SESSION['cart'])){
 					</tr>
 					<tr>
 						<th>Order Total</th>
-						<td><strong><span class="amount"><?php echo $total?>.00/-</span></strong> </td>
+						<td><strong><span class="amount"id="orderTotal" ><?php echo $total?></span>.00/-</strong> </td>
 					</tr>
 				</tbody>
 			</table>
@@ -358,7 +358,37 @@ if(isset($_SESSION['cart'])){
 </form>
 
 <script src="https://www.paypal.com/sdk/js?client-id=AYwCCBAb5E4kvJz3VLr9fvDTPreg4wYluHIMrJNNIgGqhSHP3d7v41c26RtoEKdyIL94bihPlnVIYazw&disable-funding=credit,card"></script>
-    <script src="index.js"></script>
+    <script>
+
+var total = document.getElementById('orderTotal').innerHTML;
+window.alert(total);
+paypal.Buttons({
+    style: {
+        color: 'blue',
+        shape: 'pill'
+    },
+    createOrder: function (data, actions) {
+        return actions.order.create({
+            purchase_units: [{
+                amount: {
+                    value: window.total
+                }
+            }]
+        });
+    },
+    onApprove: function (data, actions) {
+        return actions.order.capture().then(function (details) {
+            console.log(details)
+            // window.location.replace("success.php")
+            window.alert('Payment Success')
+        })
+    },
+    onCancel: function (data) {
+        // window.location.replace("Oncancel.php")
+        window.alert('Payment Cancelled')
+    }
+}).render('#paypal-payment-button');
+	</script>
 
 
 

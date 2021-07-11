@@ -1,3 +1,5 @@
+var total = document.getElementById('orderTotal').value;
+window.alert(total)
 paypal.Buttons({
     style: {
         color: 'blue',
@@ -16,11 +18,11 @@ paypal.Buttons({
         return actions.order.capture().then(function (details) {
             console.log(details)
             // window.location.replace("success.php")
-            alert('Payment Success')
+            window.alert('Payment Success')
         })
     },
     onCancel: function (data) {
         // window.location.replace("Oncancel.php")
-        alert('Payment Cancelled')
+        window.alert('Payment Cancelled')
     }
 }).render('#paypal-payment-button');
