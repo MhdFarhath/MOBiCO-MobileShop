@@ -16,18 +16,18 @@
     $query = mysqli_query($con, $sql);
 
     // Create a new post
-    if(isset($_REQUEST['new_post'])){
-        $title = $_REQUEST['title'];
-        $content = $_REQUEST['content'];
+    // if(isset($_REQUEST['new_post'])){
+    //     $title = $_REQUEST['title'];
+    //     $content = $_REQUEST['content'];
 
         
 
-        $sql = "INSERT INTO data(title, content) VALUES('$title', '$content')";
-        mysqli_query($con, $sql);
+    //     $sql = "INSERT INTO data(title, content) VALUES('$title', '$content')";
+    //     mysqli_query($con, $sql);
 
-        header("Location: index.php?info=added");
-        exit();
-    }
+    //     header("Location: index.php?info=added");
+    //     exit();
+    // }
 
     // Get post data based on id
     if(isset($_REQUEST['id'])){

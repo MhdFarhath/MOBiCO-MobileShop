@@ -341,7 +341,7 @@ if(isset($_SESSION['cart'])){
 					<input name="agree" value='true' id="checkboxG2" class="mr-2 css-checkbox " type="checkbox"><span>I've read and accept the <a href="#">terms &amp; conditions</a></span>
 			 
 				<div class="space30"></div>
-				<a href="#" class="button btn-lg">Pay Now</a>
+				<!-- <a href="#" class="button btn-lg">Pay Now</a> -->
 			</div>
         </div>		
         
@@ -361,7 +361,8 @@ if(isset($_SESSION['cart'])){
     <script>
 
 var total = document.getElementById('orderTotal').innerHTML;
-window.alert(total);
+// window.alert(total);
+var usd = total/200;
 paypal.Buttons({
     style: {
         color: 'blue',
@@ -371,7 +372,7 @@ paypal.Buttons({
         return actions.order.create({
             purchase_units: [{
                 amount: {
-                    value: window.total
+                    value: window.usd
                 }
             }]
         });

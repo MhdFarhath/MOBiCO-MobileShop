@@ -32,13 +32,19 @@
                         <i class="fas fa-chart-bar"></i> Dashboard
                     </a>
                 </li> 
+                <li class="nav-item">
+                    <a href="index.php" class="nav-link" >
+                        <i class="fas fa-chart-bar"></i> Blog Home
+                    </a>
+                </li> 
         </div>
         </div>
    <div class="container mt-5">
         <?php foreach($query as $q){?>
             <div class="bg-light p-5 rounded-lg text-black">
                 <h1><?php echo $q['title'];?></h1>
-
+                <img src="../images/<?php echo $q['images']?>" width="20%" height="20%">
+                <p class="mt-5 border-left border-dark pl-3"><?php echo $q['content'];?></p>
                 <div class="d-flex">
                     <a href="edit.php?id=<?php echo $q['id']?>" class="btn btn-dark btn-sm mt-2" name="edit">Edit</a>
                     <form method="POST">
@@ -48,7 +54,8 @@
                 </div>
 
             </div>
-            <p class="mt-5 border-left border-dark pl-3"><?php echo $q['content'];?></p>
+           
+           
         <?php } ?>    
    </div>
 

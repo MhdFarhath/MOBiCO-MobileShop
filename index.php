@@ -36,7 +36,7 @@ $_SESSION['cart']=isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
 <!-- <a href="login.php" class="btn btn-dark btn-sm ml-5">Account</a> -->
 <div class="container clearfix d-flex justify-content-center flex-fill bd-highlight">
     <div class="row">
-            <div class="col-md-2">
+        <div class="col-md-2">
             <?php include('cat.php')?>
             <br> <br>
             <div class="title mt-5 mb-2 " style="font-size:134%; ">Trending Products</div>
@@ -60,10 +60,13 @@ $_SESSION['cart']=isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
             <?php include('MobilePhone/mobile.php')?>
         </div>
     </div>
+    
 </div>
-<div class="container">
-
+<hr style="color:grey;">
+<div class="row">
+    <?php include('blog.php')?>
 </div>
+<hr style="color:grey;">
     
 
 <!-- <h1 class="text-center">Add to cart in PHP</h1>  <hr> -->

@@ -36,12 +36,71 @@
         </div>
 
    <div class="container mt-5">
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             <input type="text" placeholder="Blog Title" class="form-control my-3 bg-light text-black text-center" name="title">
             <textarea name="content" class="form-control my-3 bg-light text-black" cols="30" rows="10"></textarea>
+            Add image : <input type="file" name="file" > <br> <br>
             <button class="btn btn-dark" name="new_post">Add Post</button>
         </form>
    </div>
+   <?php 
+    include("../../dbh/config.php");
+                      
+        if($_SERVER['REQUEST_METHOD'] == "POST"){
+                
+                $title = $_POST['title'];
+                $content = $_POST['content'];
+        
+                $PIC = $_FILES['file']['name'];
+              
+                    //Save to Databaseif (isset($_POST['submit']) && isset($_FILES['my_image'])) {
+	                $img_name = $_FILES['file']['name'];
+	                $img_size = $_FILES['file']['size'];
+	                $tmp_name = $_FILES['file']['tmp_name'];
+	                $error = $_FILES['file']['error'];
+
+	                if ($error === 0) {
+                        echo "<br>error if";
+		                if ($img_size > 125000) {
+			                $em = "Sorry, your file is too large.";
+		                }else {
+			                $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
+			                $img_ex_lc = strtolower($img_ex);
+
+			                $allowed_exs = array("jpg", "jpeg", "png"); 
+
+			                if (in_array($img_ex_lc, $allowed_exs)) {
+				            $new_img_name = $img_name;
+				            $img_upload_path = '../images/'.$new_img_name;
+				            move_uploaded_file($tmp_name, $img_upload_path);
+
+				            // Insert into Database
+                            $query = "INSERT INTO data(title,content,images) VALUES  ('$title','$content','$PIC')";
+                            mysqli_query($con,$query);  
+
+                            header("Location: index.php?info=added");
+                            exit();
+				           
+			                }else {
+				            $em = "You can't upload files of this type";
+		                    // header("Location: index.php?error=$em");
+                            
+                            }
+		                }
+	                }else {
+		                $em = "unknown error occurred!";
+	
+	                }
+                    die;
+                    
+                }
+                else{
+                    // echo "<script>alert('Fill all inputs');</script>";
+                }
+
+              
+                
+    ?>
 
     <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
