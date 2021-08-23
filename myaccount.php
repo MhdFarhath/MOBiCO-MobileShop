@@ -106,14 +106,16 @@ include('dbh/config.php');
                         $result_add = mysqli_query($con, $sql_add);
                       
                      $row_add = mysqli_fetch_assoc($result_add); 
-                        echo $row_add['firstname'] ." ". $row_add['lastname'] . "<br>";
-                        echo $row_add['company'] . "<br>";
-                        echo $row_add['address1'] . "<br>";
-                        echo $row_add['address2'] . "<br>";
-                        echo $row_add['city'] . "<br>";
-                        echo $row_add['zip'] . "<br>";
-                       
-                        echo $row_add['mobile'] . "<br>";
+                        echo "Name : "."&nbsp &nbsp  &nbsp  &nbsp  &nbsp ".$row_add['firstname'] ." ". $row_add['lastname'] . "<br>";
+                        echo "Company : &nbsp  &nbsp  ".$row_add['company'] . "<br>";
+						echo "Mobile No : &nbsp  &nbsp  ".$row_add['mobile'] . "<br>";
+						echo "<br>";
+                        echo "Address line 1 : &nbsp  &nbsp  ".$row_add['address1'] . "<br>";
+                        echo "Address line 2 : &nbsp  &nbsp  ".$row_add['address2'] . "<br>";
+                        echo "City : &nbsp  &nbsp  ".$row_add['city'] . "<br>";
+                        echo "Zip Code : &nbsp  &nbsp  ".$row_add['zip'] . "<br>";
+						echo "<br>";
+                        
 
                         ?>
 

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,10 +12,10 @@
     </style>
 </head>
 <body>
-<div class="container m-4 p-4 border rounded">
+<div class=" m-3 p-4 border rounded">
     <!-- <h1 class="font-weight-bold text-dark"> <i class="fab fa-apple m-1 fa-1x"> </i> Apple Phones</h1> <br>     -->
-    <div class="row ">
-    <?php 
+    <div class="row">
+    <?php  
         $sql = "SELECT * FROM product where BNAME = 'Apple' && CATEGORY = 'mobile'  limit 4";
         $res = $con->query($sql);
 
@@ -87,7 +88,6 @@
     <br>
     <label for="Accessories"> <h1>Accessories</h1></label>
     <div class="row">
-    
     <?php 
         $sql = "SELECT * FROM product WHERE CATEGORY != 'mobile' LIMIT 8";
         $res = $con->query($sql);
@@ -104,6 +104,7 @@
     }
     ?>
     </div>
+    
     
 
 </div>

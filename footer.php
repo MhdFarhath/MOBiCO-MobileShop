@@ -15,7 +15,7 @@
 </html>
 
 <!-- Footer -->
-<footer class="text-center text-lg-start bg-light text-dark ">
+<footer class="text-center text-lg-start  text-dark " style="background-color:#eceff1;">
   <!-- Section: Social media -->
   <section
     class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom"
@@ -75,7 +75,7 @@
             Products
           </h6>
           <p>
-            <a href="MobilePhone/mobile.php" class="text-reset">Mobile</a>
+            <a href="#" class="text-reset">Mobile</a>
           </p>
           <p>
             <a href="MobilePhone/AppleMob.php" class="text-reset">Apple</a>

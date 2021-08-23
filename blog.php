@@ -59,7 +59,8 @@
 
 
 #h4{
-margin-top: 20px;    
+margin-top: 20px;   
+
 
 }
 
@@ -100,7 +101,7 @@ margin-top: 20px;
                     <div class="card" id="card">
                     <img src="Admin/images/<?php echo $row['images']?>" alt="Mobiles" style="width:100%">
                     <br>
-                    <h4 id='h4' style="color:#000051" class="text-center"><?php echo $row['title']?></h4>
+                    <h5 id='h4' style="color:#000051" class="text-center"><?php echo $row['title']?></h5>
                    <!-- <p id="p"><?php echo $row['content']?></p> -->
                    <p><a href="viewBlog.php?id=<?php echo $row['id'];?>" class="btn btn-dark form-control mb-0  p-2" style="background-color:#0A2558;">View Blog</a></p>
                 </div>
