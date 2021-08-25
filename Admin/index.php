@@ -92,7 +92,7 @@ session_start();
       <li class="log_out">
         <a href="logout.php">
           <i class='bx bx-log-out-circle'></i>
-          <span class="links_name">Signout</span>
+          <span class="links_name">Sign out</span>
         </a>
       </li>
     </ul>

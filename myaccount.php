@@ -18,7 +18,7 @@ include('dbh/config.php');
 <div class="page_header text-center">
     <h2 class='text-center text-white m-2'>My Account</h2>
 	<span><a href="index.php"><button class="btn btn-warning btn-sm m-2 ">Purchase more products</button></a></span>
-	<span><a href="logout.php"><button class="btn btn-warning btn-sm m-2 ">Signout</button></a></span>
+	<span><a href="logout.php"><button class="btn btn-warning btn-sm m-2 ">Sign Out</button></a></span>
  </div>   
 	<section id="content" >
 		<div class="content-blog content-account">
@@ -45,7 +45,7 @@ include('dbh/config.php');
 
  
   
-				$sql = "SELECT * FROM orders WHERE userid='$c_id'";
+				$sql = "SELECT * FROM orders WHERE userid='$c_id' Order by timestamp desc";
 				$result = mysqli_query($con, $sql);
 			  
 				if (mysqli_num_rows($result) > 0) {

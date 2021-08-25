@@ -1,6 +1,8 @@
 <?php  
 
 session_start();
+    // Don't display server errors 
+    ini_set("display_errors", "off");
 
 include('dbh/config.php');
 include('head.php');
@@ -13,12 +15,7 @@ if(!isset($_SESSION['customer']) && empty($_SESSION['customer']) ){
  
 if(!isset($_SESSION['customerid'])){
 	echo '<script>window.location.href = "login.php";</script>';
-
 }
-
-// echo '<pre>';
-// print_r($_POST);
-// echo '</pre>';
  
 
 

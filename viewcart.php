@@ -72,7 +72,6 @@ session_start();
                 
                 <td colspan='3'><strong>Grand Total</strong></td>
                 <td>Rs.{$total}.00</td>
-
                 </tr>
                 <tr> 
                 <td>
@@ -95,6 +94,8 @@ session_start();
            
         </div>
     </div>
+
+
 </body>
 </html>
 

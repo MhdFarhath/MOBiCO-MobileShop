@@ -34,6 +34,7 @@ include('dbh/config.php');
             font-weight: 400;
 
         }
+       
     </style>
 </head>
 <body>
@@ -140,7 +141,7 @@ include('dbh/config.php');
                             <input type='hidden' value='{$row["PNAME"]}' name='pname'>
                             <input type='hidden' value='{$row["PRICE"]}' name='price'>    
                         </li>
-                        <li><span class='text-danger mt-5' id='stock' value='{$row["STOCK"]}'> Available : In Stock</span> </li>
+                        <li><span class='text-danger mt-5' id='stock' value='{$row["STOCK"]}'>Available : <span id='stQty'>{$row["STOCK"]}</span> Items</span> </li>
                         <li><input type='submit' value='Add to Cart' name='addCart' class='btn btn-primary mt-2'></li>
 
                     </ul>
@@ -166,13 +167,16 @@ include('dbh/config.php');
     
     
     ?>
-
+<br> <br> <hr>
 <script>
         //Setting Minus Button Disabled
         document.querySelector(".minus-btn").setAttribute("disabled", "disabled");
         // Get the Value
         var valueCount = 1;
-        var stockCount ;
+        // var stockCount ;
+        var stockCount = document.getElementById("stQty").innerHTML;
+        stockCount = parseInt(stockCount);
+
         //Plus btn - increment
         document.querySelector(".plus-btn").addEventListener("click", function () {
             valueCount = document.getElementById("quantity").value;
@@ -182,10 +186,16 @@ include('dbh/config.php');
                 document.getElementById("quantity").value = valueCount;
                
 
-                if (valueCount > 1) {
+                if (valueCount > 1  ) {
                document.querySelector(".minus-btn").removeAttribute("disabled");
                document.querySelector(".minus-btn").classList.remove("disabled");
                 }
+
+                if( valueCount>= stockCount){
+                    document.querySelector(".plus-btn").setAttribute("disabled", "disabled");
+                
+                }
+                
 
                  
         })
@@ -200,9 +210,14 @@ include('dbh/config.php');
             if (valueCount == 1) {
                 document.querySelector(".minus-btn").setAttribute("disabled", "disabled");
             }
+
+            if( valueCount<= stockCount){
+                document.querySelector(".plus-btn").removeAttribute("disabled");
+                document.querySelector(".plus-btn").classList.remove("disabled");
+                 }
         })
     </script>
 
-</body>
-</html>
+    <!-- Footer Section -->
+    <?php include_once('footer.php'); ?>
 

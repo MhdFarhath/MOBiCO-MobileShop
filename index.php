@@ -73,7 +73,7 @@ $_SESSION['cart']=isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
     
 
 <!-- <h1 class="text-center">Add to cart in PHP</h1>  <hr> -->
-<!-- Body Section -->
+<!-- Footer Section -->
 <?php include_once('footer.php'); ?>
 </body>
 </html>

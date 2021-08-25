@@ -35,7 +35,7 @@
                             echo "<span style='text-decoration:underline; font-size:50px; margin-left:50;'>  Monthly Report of {$Curmonth}</span>";
                             echo "<span style='text-decoration:underline; font-size:20px; margin-left:450px;'>Today  : {$time}</span>";
                         // printf("" . $row);
-                          echo "<h4 style='margin-left:100px;'>Total amount of sales for this month : Rs. {$row['ttp']} </h4>" ;
+                          echo "<h4 style='margin-left:100px;'>Total sales ({$Curmonth})&nbsp :&nbsp &nbsp Rs. {$row['ttp']} </h4>" ;
                         }
                       
               }
@@ -53,7 +53,7 @@
                  if ($rowcount)
                     {
                     // printf("" . $row);
-                      echo "<h6 style='margin-left:100px;'> Number of Orders added this month : {$rowcount} Orders</h6>";
+                      echo "<h6 style='margin-left:100px;'> No of orders ({$Curmonth}) &nbsp: &nbsp &nbsp{$rowcount} Orders</h6>";
                     }
                   }      
                     
@@ -72,7 +72,7 @@
                  if ($rowcount)
                     {
                     // printf("" . $row);
-                      echo "<h6 style='margin-left:100px;'>Number of customers ordered products in this month : {$rowcount} Customers </h6>";
+                      echo "<h6 style='margin-left:100px;'>Number of customers ordered products ({$Curmonth}) &nbsp : &nbsp &nbsp {$rowcount} Customers </h6>";
                       echo "<hr>";
                       echo "<hr>";
                     }

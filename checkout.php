@@ -291,6 +291,18 @@ if(isset($_SESSION['cart'])){
 			<table class="table table-bordered extra-padding bg-white text-dark">
 				<tbody>
 					<tr>
+						<th>Products Ordered</th>
+						<td><span class="amount"><?php 
+						$myarr = array($_SESSION['cart']);
+						$arr = $myarr['0'];
+						
+						for($i=0;$i<count($arr);$i++){
+							print_r($myarr['0'][$i]['pname']);
+							echo ", ";
+						}
+						?></span></td>
+					</tr>
+					<tr>
 						<th>Cart Subtotal</th>
 						<td><span class="amount"><?php echo $total?>.00/-</span></td>
 					</tr>
@@ -315,22 +327,22 @@ if(isset($_SESSION['cart'])){
              
 				<div class="row d-flex">
 				
-						<div class="col-md-4">
+						<div class="col-md-6">
 							<input name="payment" value='COD'  id="radio1" class="mr-2 css-checkbox" type="radio"><span>COD</span>
 							<div class="space20"></div>
-							<p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won't be shipped until the funds have cleared in our account.</p>
+							<p>Make your payments on the time of delivery. Delivery charges may applied according the distance from the shop.</p>
+							<!-- <p>Make your payment directly into our bank account. Please use your Order ID as the payment reference. Your order won't be shipped until the funds have cleared in our account.</p> -->
 						</div>
-						<div class="col-md-4">
+						<!-- <div class="col-md-4">
 							<input name="payment" value='Cheque'  id="radio2" class="mr-2 css-checkbox" type="radio"><span>Cheque Payment</span>
 							<div class="space20"></div>
 							
-						</div>
-						<div class="col-md-4">
+						</div> -->
+						<div class="col-md-6">
 							<input name="payment" value='Paypal'  id="radio3" class="mr-2 css-checkbox" type="radio"><span>Paypal</span>
 							<div class="space20"></div>
 							<p>Pay via PayPal; you can pay with your credit card if you don't have a PayPal account</p>
 							<div id="paypal-payment-button">
-
                         	</div>
 						</div>
 				
@@ -347,7 +359,7 @@ if(isset($_SESSION['cart'])){
         
         <div class="row">
             <div class="col-md-12 text-center">
-                <input type='submit' name='submit' value='Pay Now' class="btn btn-info m-2">
+                <input type='submit' name='submit' value='Order now' class="btn btn-info m-2">
             </div>
         </div>
 		
